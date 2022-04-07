@@ -1,0 +1,65 @@
+.Data {
+    width: 900px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    box-shadow: rgba(0,0,0,0.2);
+    color: rgb(47, 74, 74);;
+    padding: 24px;
+    margin: 24px;
+    opacity: 85%;
+
+}
+
+table {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 2rem;
+    margin-top: 24px;
+}
+
+th, tr{
+    text-align: center;
+    font-size: 1rem;
+    
+}
+tr:nth-child(even){
+    background-color: #5d8f8f;
+    color: rgb(255, 255, 255);
+        
+}
+
+th{
+    background-color: rgb(229, 229, 229);
+    color: darkslategrey;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    opacity: 95%;
+}  
+
+td{
+    padding: 2rem; 
+    text-align: center;
+    font-size: 1rem;
+    z-index: inherit;
+    color: rgb(61, 61, 61);
+}
+
+    /* ---------add button */
+.add-activity {
+    display: flex;
+    justify-content: end;
+}
+
+.add-activity-btn {
+    margin: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;    
+    font-weight: 600;
+    color: rgb(250, 248, 248);
+    background-color:#2f4f4f ;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 1rem;
+    cursor: pointer;
+}

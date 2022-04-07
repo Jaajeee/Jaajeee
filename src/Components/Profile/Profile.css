@@ -1,0 +1,57 @@
+/* profile */
+.profile-sidebar {
+    display: flex;
+    justify-items: center;
+    width: 20%;
+    height: 50rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    outline: none;
+    margin: 24px;
+    opacity: 85%;
+   
+}
+.all-profile {
+    width: 290px;
+}
+.img-profile {
+    color: rgb(191, 191, 191);
+    display: flex;
+    align-items: center;
+    width: 290px;
+    height: 200px;
+}
+
+.profile-menu {
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.5rem;
+}
+
+h1 {
+    color: teal;
+    font-size: medium;
+    padding: auto;
+}
+
+h2 {
+    color: goldenrod;
+    font-size: small;
+    padding: auto;
+}
+
+.log-button {
+    border: none;
+    border-radius: 0.5rem;
+    background: #f55c4b;
+    color: #fff;
+    width: 100px;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    cursor: pointer;
+    margin-left: 2rem;
+}

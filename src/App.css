@@ -1,0 +1,10 @@
+body {
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Padauk', sans-serif;
+    }
+
+.Container {
+    display: flex;
+    justify-items: center;
+}

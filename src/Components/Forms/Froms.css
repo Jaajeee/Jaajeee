@@ -1,0 +1,63 @@
+
+.form-list{
+    width: 900px;
+    background-color: rgb(255, 255, 255);
+    border-color: dimgrey;
+    border-radius: 1rem;
+    box-shadow: rgba(0,0,0,0.2);
+    color: darkslategray;;
+    padding: 24px;
+    margin: 24px;
+    opacity: 85%;
+
+}
+label {
+    color: #2f4f4f;
+    font-weight: 800;
+    font-size: large;
+    margin: 2rem;
+
+}
+
+input {
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    outline: none;
+    margin: 32px;
+}
+
+select {
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    outline: none;
+}
+
+.durationPicker {
+    padding: 1rem 1.5rem;
+    width: fit-content;
+    font-size: 1rem;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.saveButton{
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(250, 248, 248);
+    background-color:#2f4f4f ;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    padding: 1rem;
+    cursor: pointer;
+  }
+

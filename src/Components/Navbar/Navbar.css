@@ -1,0 +1,13 @@
+nav {
+    background-color: rgb(253, 253, 253);
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+a {
+    text-decoration: none;
+    color: rgb(6, 61, 61);
+    font-size: 20px;
+    padding: 1rem 1rem;
+}
+
