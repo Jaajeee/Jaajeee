@@ -1,3 +1,4 @@
+
 /* profile */
 .profile-sidebar {
     display: flex;
@@ -11,10 +12,11 @@
     outline: none;
     margin: 24px;
     opacity: 85%;
-   
 }
+
 .all-profile {
-    width: 290px;
+    width: 390px;
+    position: relative;
 }
 .img-profile {
     color: rgb(191, 191, 191);
@@ -22,12 +24,29 @@
     align-items: center;
     width: 290px;
     height: 200px;
+    position: relative;
 }
 
 .profile-menu {
     justify-content: center;
     align-items: center;
     padding-left: 1.5rem;
+    position: relative;
+
+}
+
+/* for mobile phone */
+@media screen and (max-width: 768px) {
+  .all-profile {
+    display: none;
+  }
+  .profile-menu {
+    display: none;
+  }
+  .img-profile {
+      display: none
+  }
+
 }
 
 h1 {

@@ -2,9 +2,18 @@ body {
     font-family: 'Francois One', sans-serif;
     font-family: 'Lato', sans-serif;
     font-family: 'Padauk', sans-serif;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5),#026d62),url(./bgcover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
     }
 
 .Container {
     display: flex;
     justify-items: center;
 }
+

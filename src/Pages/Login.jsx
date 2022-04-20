@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import LogoApp from '../Components/Logins/Logos/LogoApp';
 import Title from '../Components/Logins/Titles/Titles';
 import Button from '../Components/Logins/Button/Button';
-import LoginInput from '../Components/Logins/LoginForm/Login';
+import LoginInput from '../Components/Logins/LoginForm/LoginInput';
 import NoAccount from '../Components//Logins/NoAccount/Noaccount';
-import GoogleButton from '../Components//Logins/GoogleButton/Googlebutton';
-
 
 import '../Components/Logins/logins.css';
+
 
 const LoginPage = () => {
   const [isInvalid, setIsInvalid] = useState(false);
@@ -22,18 +22,49 @@ const LoginPage = () => {
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
     };
+
+  const validatePassword = (password) => {
+    return String(password).length >= 8;
+  };
+
   useEffect(() => {
-    if(email.length > 0){ 
+    if (email.length > 0){ 
       setIsInvalid(!validateEmail(email));
     } else {
       setIsInvalid(false);
+    } 
+    if(password.length > 0 && password.length < 8){ 
+      setIsInvalid(!validatePassword(password));
+    }else {
+      setIsInvalid(false);
     }
-  },[email]);
+  },[email,password]);
   
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    axios
+      .post('https://localhost.3000/login/user', {
+        client: {
+          email: "user1@email.com",
+          password: 12345678
+        }
+      })
+      .then((response) => {
+        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('userId', response.data.user.id);
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        window.location = '/';
+      })
+      .catch((error) => {
+        console.log('error', error);
+      });
+  }
+
   return (
   <main>
     <div className='container'>
-      <LogoApp />  
+      <LogoApp></LogoApp>
       <Title>Login</Title>    
       <LoginInput id='email' 
         type='text' 
@@ -42,18 +73,21 @@ const LoginPage = () => {
         className="form-inputs" 
         value={email} 
         isInvalid={isInvalid}
-        onChange={e => setEmail(e.target.value)}
-        > 
+        onChange={e => setEmail(e.target.value)
+        }> 
         </LoginInput>
+        
         <LoginInput id='password' 
         type="password"
         name="password"
+        placeholder="Enter your password" 
         className="form-inputs"
-        placeholder="Enter your password"  />
+        value={password}
+        onChange={e => setPassword(e.target.value)} 
+        />
         
-      <Button>Login</Button>
-      <GoogleButton />       
-      <NoAccount onSignUpClick={() => alert('sign up')}/>
+      <Button onClick={submitForm}>Login</Button>     
+      <NoAccount onSignUpClick={() => alert('sign up')}></NoAccount>
     </div>
   </main>
   );

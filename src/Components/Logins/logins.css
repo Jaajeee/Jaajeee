@@ -1,11 +1,6 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.5),#026d62),url(../../bgcover.jpg);
-  background-size: cover;
-  background-position: center;
 }
 
 .bold {
@@ -22,7 +17,7 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
-   box-sizing: border-box;
+   margin-top: 3rem;
 }
 
 .title {
@@ -59,7 +54,7 @@ color: rgb(229, 229, 229);
     color: #f05544;
     width: 100%;
     text-align: center;
-    margin-top: -0.75rem;
+    margin-top: 0.75rem;
   }
 
   .LoginInput {
@@ -76,40 +71,39 @@ color: rgb(229, 229, 229);
 /* login */
   .form-inputs {
     margin: 1rem;
-  }
-/* sign up */
-  .form-input-signUp {
-    margin: 1rem;
+    width: 100%;
+  
   }
 
-  label {
-    width: 100%;
-  }
+
 
   /* btn-login css */
-  .google-btn {
-    margin-top: 1.2rem;
-    cursor: pointer;
-    width: 64px;
-    color: #fdfdfd;
-    outline-color: black;
-  }
 /* btn */
   .custom-btn {
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
+    margin: 1rem 1rem;
     background: #f2796b;
-    color: #fff;
     width: fit-content;
+    color: #fff;
     padding: 1rem;
     font-weight: 700;
     font-size: 1rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
     cursor: pointer;
   }
+  .custom-btn:hover {
+    border: none;
+    border-radius: 0.5rem;
+    background: #f67567;
+    color: rgb(14, 14, 14);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
+    transition: all 0.3s ease-out;
+  }
 
 /* Logo */
 .LogoApp {
-  margin-top: 10rem;
+  margin-top: 1rem;
   width: 250px;
 }

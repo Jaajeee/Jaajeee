@@ -1,20 +1,35 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import './Navbar.css';
+import logo from './djmapplogo.svg';
 
-export default function NavBar() {
-  const Menuitems = ['activity', 'data'];
-  const NavLinks = Menuitems.map(Menuitems => {
-    return (
-      <a href={"/" + Menuitems}>
-        {Menuitems}
-        </a>
-    )
-  });
+const NavBar = () => {
       return ( 
-      <>
-      <nav>
-      {NavLinks}
+      <nav className="navbar-container">
+        <div className="navbar-container-item">
+        <div className="navbar-brand-logo">
+          <NavLink className="navbar-brand-logo-link" to="/" exact>
+            <img src={logo} className="navbar-brand-logo-img" alt="logo" />
+          </NavLink>
+        </div>
+        <div className="navbar-menu">
+          <ul className="navbar-list">
+            <li className="navbar-item">
+              <NavLink className="nav-link" to="/addactivity" >Activity
+              </NavLink>
+            </li>
+            <li className="navbar-item">
+              <NavLink className="nav-link" to="/data" >Data
+              </NavLink>
+            </li>
+            <li className="navbar-item">
+              <NavLink className="nav-link" to="/" >Sign out
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        </div>
       </nav>
-      </>
   );
 };
+export default NavBar;

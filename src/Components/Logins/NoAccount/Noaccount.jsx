@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import '../logins.css';
 
-const NoAccount = ({ isLoggedIn = false, signUpPath= '/SignUp' }) => {
+const NoAccount = ({ isLoggedIn = false, signUpPath = '/signup' }) => {
 
   if(isLoggedIn) return null;
   
