@@ -16,7 +16,8 @@ const inputData = ({ data, onEdit, onDelete}) => {
                 <td>{items.selectList}</td>
                 <td>{items.kilocalories}</td>
                 <td>{items.Timestamp}</td>
-                <td>{items.hour}:{items.minute}</td>
+                <td>{items.hour}</td>
+                <td>{items.minute}</td>
                 <td>
                     <button id={index} className="edit-btn" onClick={handleClick}>Edit</button>
                     <button id={index} className="delete-btn" onClick={handleClick}>Delete</button>

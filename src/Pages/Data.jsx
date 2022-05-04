@@ -9,8 +9,10 @@ const DataPage = () => {
     return (
         <main>
             <NavBar></NavBar>
-            <Profile></Profile>
+            <div className='Container'>
+            <Profile></Profile>   
             <SaveData></SaveData>
+            </div>
         </main>
     )
 };

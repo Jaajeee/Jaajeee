@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import LogoApp from '../Components/Logins/Logos/LogoApp';
 import Title from '../Components/Logins/Titles/Titles';
 import Button from '../Components/Logins/Button/Button';
@@ -33,21 +32,23 @@ const LoginPage = () => {
     } else {
       setIsInvalid(false);
     } 
-    if(password.length > 0 && password.length < 8){ 
-      setIsInvalid(!validatePassword(password));
-    }else {
-      setIsInvalid(false);
-    }
-  },[email,password]);
-  
+  },[email]);
+
+  useEffect(() => {
+  if(password.length > 0 && password.length < 8){ 
+    setIsInvalid(!validatePassword(password));
+  }else {
+    setIsInvalid(false);
+  }
+  },[password]);
 
   const submitForm = (e) => {
     e.preventDefault();
     axios
-      .post('https://localhost.3000/login/user', {
+      .post('https://localhost.4000/login/user', {
         client: {
-          email: "user1@email.com",
-          password: 12345678
+          email:  '',
+          password: '',
         }
       })
       .then((response) => {
@@ -65,7 +66,7 @@ const LoginPage = () => {
   <main>
     <div className='container'>
       <LogoApp></LogoApp>
-      <Title>Login</Title>    
+      <Title>Sign in</Title>    
       <LoginInput id='email' 
         type='text' 
         name='email' 
@@ -85,8 +86,8 @@ const LoginPage = () => {
         value={password}
         onChange={e => setPassword(e.target.value)} 
         />
-        
-      <Button onClick={submitForm}>Login</Button>     
+       
+      <Button onClick={submitForm}>Sign in</Button>     
       <NoAccount onSignUpClick={() => alert('sign up')}></NoAccount>
     </div>
   </main>

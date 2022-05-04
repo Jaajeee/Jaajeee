@@ -6,9 +6,9 @@ const AddActivity = () => {
     const initialState = {
         name: '',
         description: '',
-        activity: '',
+        selectList: '',
         kilocalories: '',
-        date: '',
+        Timestamp: '',
         hour: '',
         minute: '',
     }
@@ -25,9 +25,9 @@ const AddActivity = () => {
         let isNull = {
             name: false,
             description: false,
-            activity: false,
+            selectList: false,
             kilocalories: false,
-            date: false,
+            Timestamp: false,
             hour: false,
             minute: false,
         }
@@ -76,15 +76,15 @@ const AddActivity = () => {
                 return {...prevError, kilocalories: ''}
         })
         } 
-        if (activity.date === '') {
-            isNull.date = false;
+        if (activity.Timestamp === '') {
+            isNull.Timestamp = false;
             setErrors((prevError) => {
-                return {...prevError, date: 'Date is required'}
+                return {...prevError, Timestamp: 'Date is required'}
         })
         } else {
-            isNull.date = true;
+            isNull.Timestamp = true;
             setErrors((prevError) => {
-                return {...prevError, date: ''}
+                return {...prevError, Timestamp: ''}
         })
         }
         if (activity.hour === '') {
@@ -109,6 +109,7 @@ const AddActivity = () => {
                 return {...prevError, minute: ''}
         })
         }
+        
         const isValided = isNull.name && isNull.description && isNull.activity && isNull.kilocalories && isNull.date && isNull.hour && isNull.minute;
         console.log(isValided);
         if (isValided === -1) {
@@ -118,10 +119,10 @@ const AddActivity = () => {
     useEffect(() => {
         (async () => {
             const client = axios.create({
-                baseURL: 'http://localhost:3000',
+                baseURL: 'http://localhost:4000',
             })
             if (isValided) {
-                await client.post('/users/me/activitiesData', activity)
+                await client.post('/users/activityData', activity)
                 .then(res => {
                     if (res.status === 200) {
                         console.log(res)

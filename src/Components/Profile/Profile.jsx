@@ -12,8 +12,8 @@ export default function Profile() {
                     <h1>Account: </h1>
                     <p>example@example.com</p>
                 
-                    <h1>Name: </h1>
-                    <h2>Name Surname</h2>
+                    <h1>UserName: </h1>
+                    <h2>Username</h2>
                 
                     <h1>Height: </h1>
                     <h2>175</h2>

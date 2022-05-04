@@ -13,7 +13,6 @@ const FormSignup = ({submitForm}) => {
   );
 
   return (
-
     <div className='form-content-right'>
       <form className='form-SignUp' onSubmit={handleSubmit} noValidate>
       <LogoApp />  

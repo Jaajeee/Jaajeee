@@ -40,10 +40,6 @@ body {
     margin-top: auto;
 }
 
-.signUp {
-text-decoration: none;
-color: rgb(229, 229, 229);
-}
 
 /* login form css */
 .error{
@@ -72,9 +68,13 @@ color: rgb(229, 229, 229);
   .form-inputs {
     margin: 1rem;
     width: 100%;
-  
   }
 
+  a.SignUp.pointer {
+    text-decoration: none;
+    color: #fdfdfd;
+    margin: 1rem;
+  }
 
 
   /* btn-login css */
@@ -96,11 +96,12 @@ color: rgb(229, 229, 229);
     border: none;
     border-radius: 0.5rem;
     background: #f67567;
-    color: rgb(14, 14, 14);
+    color: rgb(103, 103, 103);
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px;
     transition: all 0.3s ease-out;
   }
+
 
 /* Logo */
 .LogoApp {

@@ -4,31 +4,31 @@ import "./Froms.css";
 import axios from "axios";
 
 function Forms() { 
+
     const data = () => {
         axios({
           method: "POST",
           data: {
-            name: setName,
-            description: setDescription,
-            selectList: setSelectList,
-            kilocalories: setKilocalorie,
-            Timestamp: setDate,
-            hour: setHour,
-            minute: setMinutes,
+            name: '',
+            description: '',
+            selectList: '',
+            kilocalories: '',
+            Timestamp: '',
+            hour:  '',
+            minute: '',
           },
-          withCredentials: true,
-          url: "http://localhost:3000/users/me/data",
+          url: "http://localhost:4000/users/activityData",data
         }).then((res) => console.log(res));
       };
 
-    const [isInvalid, setIsInvalid] = useState(false);
+    // const [isInvalid, setIsInvalid] = useState(false);
     const [name, setName] = useState ('')
     const [description, setDescription] = useState ('')
     const [kiloCalorie, setKilocalorie] = useState ('')
     const [date, setDate] = useState ();
     const [selectList, setSelectList] = useState ();
     const [hour, setHour] = useState ();
-    const [minutes, setMinutes] = useState ();
+    const [minute, setMinute] = useState ();
 
     
     const onChangeName = (e) => {
@@ -61,16 +61,15 @@ function Forms() {
         setHour(e.target.value);
     };
 
-    const onChangeMinutes = (e) => {
-        setMinutes(e.target.value);
+    const onChangeMinute = (e) => {
+        setMinute(e.target.value);
     };
 
+    console.log(data);
 
     return ( 
         <div className="Container">
             <form className="form-list">
-                <h1>Add Activity</h1>
-
                     <label className="formControl">Name</label>
                     <input
                     id="Username" 
@@ -80,7 +79,6 @@ function Forms() {
                     value={name} 
                     onChange={onChangeName}/>
               
-                
                     <label className="formControl">Description</label>
                     <input 
                     type="text" 
@@ -90,21 +88,14 @@ function Forms() {
                
                     <br />                
                     <label className="formControl">Activity List</label>
-                    <select value={selectList} 
-                    onChange={onChangeSelectList}
-                    >
-                        <option value={selectList} 
-                    onChange={onChangeSelectList}>running</option>             
-                        <option value={selectList} 
-                    onChange={onChangeSelectList}>cycling</option>
-                        <option value={selectList} 
-                    onChange={onChangeSelectList}>walking</option>
-                        <option value={selectList} 
-                    onChange={onChangeSelectList}>swimming</option>
-                        <option value={selectList} 
-                    onChange={onChangeSelectList}>hiking</option>
+                    <select value={selectList} onChange={onChangeSelectList}> 
+                        <option value="">Select Activity</option>
+                        <option value="Running">Running</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Hiking">Hiking</option>
                     </select>
-
                     <label className="formControl">Kilocalories</label>
                     <input
                         type="number" placeholder="input calories" 
@@ -117,18 +108,17 @@ function Forms() {
                         value={date}
                         onChange={onChangeDate}
                         />
-
                     <br />
                     <label>Duration</label>
                     <div className="duration">
                         <input type="number" value={hour} onChange={onChangeHour} name="hour" min={0} max={24} required></input>
                         <label>Hr : </label> 
-                        <input type="number" value={minutes} onChange={onChangeMinutes} name="minute" min={0} max={59} required></input>
+                        <input type="number" value={minute} onChange={onChangeMinute} name="minute" min={0} max={59} required></input>
                         <label>Mn</label>  
                     </div>
                     
                     <div className="saveActivity">
-                        <button type="submit" onClick={data} className="saveButton">Save</button>
+                        <button type="submit" onClick={data} className="btn-save">Save</button>
                     </div> 
             </form>
         </div>
